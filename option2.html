@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hareg - Authentic Ethiopian Cuisine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ethiopian-green: #006233;
+            --ethiopian-yellow: #ffc845;
+            --ethiopian-red: #da121a;
+            --dark-text: #1a1a1a;
+            --light-text: #666;
+            --cream: #fef9f3;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--ethiopian-green);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 15px rgba(0, 98, 51, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--ethiopian-yellow);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--ethiopian-yellow);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            position: relative;
+            background: url('https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1') center/cover no-repeat;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 98, 51, 0.9) 0%, rgba(218, 18, 26, 0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            padding: 3rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            color: var(--ethiopian-yellow);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--cream);
+            line-height: 1.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-flag {
+            display: flex;
+            height: 8px;
+            margin-bottom: 3rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .flag-green {
+            flex: 1;
+            background-color: var(--ethiopian-green);
+        }
+
+        .flag-yellow {
+            flex: 1;
+            background-color: var(--ethiopian-yellow);
+        }
+
+        .flag-red {
+            flex: 1;
+            background-color: var(--ethiopian-red);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--ethiopian-yellow);
+            color: var(--dark-text);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 20px rgba(255, 200, 69, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 200, 69, 0.6);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-green {
+            background-color: var(--cream);
+        }
+
+        .section-white {
+            background-color: var(--white);
+        }
+
+        .section-dark {
+            background-color: var(--ethiopian-green);
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--ethiopian-green), var(--ethiopian-yellow), var(--ethiopian-red));
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+
+        .section-dark .section-header p {
+            color: var(--cream);
+        }
+
+        /* Featured Dishes Grid */
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .dish-card {
+            background-color: var(--white);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--ethiopian-red);
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .dish-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .dish-card:hover .dish-image img {
+            transform: scale(1.1);
+        }
+
+        .dish-content {
+            padding: 2rem;
+        }
+
+        .dish-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--ethiopian-green);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dish-content p {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .dish-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .dish-tag {
+            background-color: var(--cream);
+            color: var(--ethiopian-green);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .dish-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--ethiopian-red);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border: 10px solid var(--ethiopian-yellow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-text p {
+            color: var(--cream);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--ethiopian-yellow);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateX(10px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 800;
+            color: var(--ethiopian-green);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .testimonial-dish {
+            color: var(--ethiopian-red);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Location Section */
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .location-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .info-group h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            color: var(--ethiopian-red);
+            text-transform: uppercase;
+        }
+
+        .info-group p {
+            color: var(--light-text);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .info-group a {
+            color: var(--ethiopian-green);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-group a:hover {
+            color: var(--ethiopian-red);
+        }
+
+        .location-map {
+            width: 100%;
+            height: 500px;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border: 10px solid var(--ethiopian-green);
+        }
+
+        .location-map iframe {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--ethiopian-yellow);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--ethiopian-yellow);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-flag {
+            display: flex;
+            height: 5px;
+            margin: 2rem auto;
+            max-width: 200px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .dishes-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Hareg</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hareg</h1>
+            <h2>Authentic Ethiopian Cuisine</h2>
+            <div class="hero-flag">
+                <div class="flag-green"></div>
+                <div class="flag-yellow"></div>
+                <div class="flag-red"></div>
+            </div>
+            <p>Discover the vibrant flavors of Ethiopia. Traditional recipes crafted with authentic spices and served with pride. Welcome to a taste of our homeland.</p>
+            <a href="#menu" class="cta-button">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Featured Dishes Section -->
+    <section id="menu" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Signature Dishes</h2>
+                <p>Authentic Ethiopian flavors prepared with traditional methods and served on fresh, homemade injera</p>
+            </div>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1" alt="Doro Wot">
+                    </div>
+                    <div class="dish-content">
+                        <h3>Doro Wot</h3>
+                        <p>Tender chicken slowly simmered in berbere spice sauce with hard-boiled eggs. Our most beloved traditional dish.</p>
+                        <div class="dish-tags">
+                            <span class="dish-tag">Spicy</span>
+                            <span class="dish-tag">Traditional</span>
+                        </div>
+                        <div class="dish-price">$16.99</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1" alt="Kitfo">
+                    </div>
+                    <div class="dish-content">
+                        <h3>Kitfo</h3>
+                        <p>Seasoned minced beef mixed with mitmita spice and niter kibbeh. Served raw, lightly cooked, or fully cooked.</p>
+                        <div class="dish-tags">
+                            <span class="dish-tag">Premium</span>
+                            <span class="dish-tag">Spicy</span>
+                        </div>
+                        <div class="dish-price">$18.99</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1" alt="Vegetarian Combo">
+                    </div>
+                    <div class="dish-content">
+                        <h3>Veggie Combo</h3>
+                        <p>A selection of lentils, chickpeas, collard greens, and vegetables seasoned with authentic Ethiopian spices.</p>
+                        <div class="dish-tags">
+                            <span class="dish-tag">Vegetarian</span>
+                            <span class="dish-tag">Healthy</span>
+                        </div>
+                        <div class="dish-price">$14.99</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1" alt="Tibs">
+                    </div>
+                    <div class="dish-content">
+                        <h3>Tibs</h3>
+                        <p>Sautéed beef or lamb with onions, peppers, and Ethiopian spices. A flavorful and aromatic favorite.</p>
+                        <div class="dish-tags">
+                            <span class="dish-tag">Popular</span>
+                            <span class="dish-tag">Aromatic</span>
+                        </div>
+                        <div class="dish-price">$17.99</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1" alt="Injera">
+                    </div>
+                    <div class="dish-content">
+                        <h3>Injera</h3>
+                        <p>Traditional Ethiopian sourdough flatbread served with your choice of berbere or awaze spread.</p>
+                        <div class="dish-tags">
+                            <span class="dish-tag">Side Dish</span>
+                            <span class="dish-tag">Gluten-Free</span>
+                        </div>
+                        <div class="dish-price">$5.99</div>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/IMG-0930_1649845622.jpg?width=2400&optimize=medium&height=480&fit=cover&dpr=1" alt="Coffee Ceremony">
+                    </div>
+                    <div class="dish-content">
+                        <h3>Coffee Ceremony</h3>
+                        <p>Experience the traditional Ethiopian coffee ritual. Fresh roasted beans brewed in a jebena pot.</p>
+                        <div class="dish-tags">
+                            <span class="dish-tag">Traditional</span>
+                            <span class="dish-tag">Experience</span>
+                        </div>
+                        <div class="dish-price">$8.99</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-dark">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://0f7456562e6ca53323f9.cdn6.editmysite.com/uploads/b/0f7456562e6ca53323f9c7758e28dbc2e04fdfa93adb910cdbee0a74bf912af9/tres-beaux-repas-chez_1649493983.jpg?width=2400&optimize=medium" alt="Hareg Restaurant">
+                </div>
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>At Hareg, we bring the authentic flavors of Ethiopia to your table. Our restaurant is named after the Ethiopian word for "my country," reflecting our deep connection to our homeland and its culinary traditions.</p>
+                    <p>Every dish is prepared using traditional methods and family recipes that have been passed down through generations. We source the finest spices and ingredients to ensure an authentic dining experience.</p>
+                    <p>From our signature Doro Wot to our freshly made Injera, each meal is crafted with care and served with the warm hospitality that Ethiopia is known for. Come join us and experience the rich cultural heritage of Ethiopian cuisine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-green">
+        <div class="container">
+            <div class="section-header">
+                <h2>What People Say</h2>
+                <p>Read about the experiences of our valued customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The most authentic Ethiopian food I've had outside of Addis Ababa! The Doro Wot was incredible and the injera was perfectly sour. The staff made us feel like family."</p>
+                    <p class="testimonial-author">Sarah M.</p>
+                    <p class="testimonial-dish">Doro Wot</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Amazing vegetarian options! The variety in the veggie combo was outstanding and every dish was bursting with flavor. This is now my go-to spot for dinner."</p>
+                    <p class="testimonial-author">David L.</p>
+                    <p class="testimonial-dish">Vegetarian Combo</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The coffee ceremony was a beautiful experience. The entire atmosphere of Hareg is warm and welcoming. The Kitfo was cooked to perfection!"</p>
+                    <p class="testimonial-author">Jennifer K.</p>
+                    <p class="testimonial-dish">Kitfo & Coffee Ceremony</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visit Us</h2>
+                <p>Located in the heart of Ottawa on Bank Street. Come experience authentic Ethiopian cuisine in a warm and welcoming atmosphere</p>
+            </div>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Hareg Abyssinia</h3>
+                    <div class="info-group">
+                        <h4>Address</h4>
+                        <p>587 Bank Street<br>Ottawa, Ontario K1S 3T4</p>
+                    </div>
+                    <div class="info-group">
+                        <h4>Hours</h4>
+                        <p><strong>Monday - Friday:</strong><br>
+                           11:30 AM - 2:30 PM<br>
+                           5:00 PM - 9:00 PM</p>
+                        <p><strong>Saturday - Sunday:</strong><br>
+                           11:30 AM - 10:00 PM</p>
+                    </div>
+                    <div class="info-group">
+                        <h4>Contact</h4>
+                        <p>Phone: <a href="tel:+16136952488">(613) 695-2488</a><br>
+                           Email: <a href="mailto:haregvariety@gmail.com">haregvariety@gmail.com</a></p>
+                    </div>
+                    <a href="tel:+16136952488" class="cta-button">Call Now</a>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.0647!2d-75.6906!3d45.4063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05a1c3b3e3e3%3A0x1e3e3e3e3e3e3e3e!2s587%20Bank%20St%2C%20Ottawa%2C%20ON%20K1S%203T4!5e0!3m2!1sen!2sca!4v1234567890" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Hareg</h4>
+                <p>Authentic Ethiopian Cuisine</p>
+                <p>Abyssinia Business Center in Ottawa</p>
+                <div class="footer-flag">
+                    <div class="flag-green"></div>
+                    <div class="flag-yellow"></div>
+                    <div class="flag-red"></div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About Us</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>587 Bank Street<br>Ottawa, Ontario K1S 3T4</p>
+                <a href="tel:+16136952488">Phone: (613) 695-2488</a>
+                <a href="mailto:haregvariety@gmail.com">Email: haregvariety@gmail.com</a>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Monday - Friday:<br>11:30 AM - 2:30 PM, 5:00 PM - 9:00 PM</p>
+                <p>Saturday - Sunday:<br>11:30 AM - 10:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Hareg Ethiopian Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
