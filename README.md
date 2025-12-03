@@ -12,11 +12,12 @@ Authentic Ethiopian Cuisine in Ottawa
 
 ## Website
 
-Visit our website in four different designs:
+Visit our website in five different designs:
 - **Design Option 1 (Elegant Gold):** [https://titov-dmytro.github.io/hareg-cafe/](https://titov-dmytro.github.io/hareg-cafe/)
 - **Design Option 2 (Bold Ethiopian Colors):** [https://titov-dmytro.github.io/hareg-cafe/option2.html](https://titov-dmytro.github.io/hareg-cafe/option2.html)
 - **Design Option 3 (Minimalist Modern):** [https://titov-dmytro.github.io/hareg-cafe/option3.html](https://titov-dmytro.github.io/hareg-cafe/option3.html)
 - **Design Option 4 (Luxury Dark Theme):** [https://titov-dmytro.github.io/hareg-cafe/option4.html](https://titov-dmytro.github.io/hareg-cafe/option4.html)
+- **Design Option 5 (Fresh & Vibrant):** [https://titov-dmytro.github.io/hareg-cafe/option5.html](https://titov-dmytro.github.io/hareg-cafe/option5.html)
 
 ## About
 
