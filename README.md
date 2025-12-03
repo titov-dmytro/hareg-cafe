@@ -12,7 +12,9 @@ Authentic Ethiopian Cuisine in Ottawa
 
 ## Website
 
-Visit our website: [Hareg Restaurant](https://titov-dmytro.github.io/hareg-cafe/)
+Visit our website in two different designs:
+- **Design Option 1 (Elegant):** [https://titov-dmytro.github.io/hareg-cafe/](https://titov-dmytro.github.io/hareg-cafe/)
+- **Design Option 2 (Bold & Vibrant):** [https://titov-dmytro.github.io/hareg-cafe/option2.html](https://titov-dmytro.github.io/hareg-cafe/option2.html)
 
 ## About
 
